@@ -1,0 +1,61 @@
+{
+  "name": "unist-util-size",
+  "version": "0.0.0",
+  "description": "Calculate the number of nodes in a unist tree",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "node",
+    "size",
+    "count"
+  ],
+  "repository": "https://github.com/syntax-tree/unist-util-size",
+  "bugs": "https://github.com/syntax-tree/unist-util-size/issues",
+  "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "esmangle": "^1.0.1",
+    "hastscript": "^3.0.1",
+    "nyc": "^10.0.0",
+    "remark": "^6.0.1",
+    "remark-cli": "^2.0.0",
+    "remark-preset-wooorm": "^1.0.0",
+    "tape": "^4.0.0",
+    "xo": "^0.17.1"
+  },
+  "scripts": {
+    "build-md": "remark . -qfo",
+    "build-bundle": "browserify index.js --bare -s unistUtilSize > unist-util-size.js",
+    "build-mangle": "esmangle < unist-util-size.js > unist-util-size.min.js",
+    "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+    "lint": "xo",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run build && npm run lint && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "xo": {
+    "space": true,
+    "rules": {
+      "max-params": "off"
+    },
+    "ignores": [
+      "unist-util-size.js"
+    ]
+  },
+  "remarkConfig": {
+    "presets": "wooorm"
+  }
+}
