@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - '4.0'
-- '6.0'
+- '9.0'
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   - provider: npm
@@ -10,7 +10,7 @@ deploy:
       secure: 4e1QR4Yx1K6SwZ8iA26PC0JpFdZv7BpNoOE1dIeon6L/e+kH+FXMPsId0jAEB7zLhSRySMjlZE1Ha6oWk6bVPpAVdVaU3t5IC+OOZqIrEtkP/scsv7XD6PmG5OKswjc3KjKWKS/cLX0XmeDAmtxLtiiHYbYGCbMV4ZN5HttPiWCpgUjPrh1Cb0nnQJu05Bwbw8KR/8iazKJKJUcVuu51mKFYplsBIXmLPiBP/h69ql+GhKZ103/+04IZdrNh3C/JfxU9HXksWUqvFL4N76BsxCLw9w5am2JG6jude2OQwcoM4bcYLu+94s7LqRHjpSAlrUSpoE3fJgAf92eIRRtO4atgPlTAFY77BS5QLlokYNs5yDdgY3xkEpBV6tkaJEcMCAbOn2wwmDpk8q12i607+rssYEyese58pRaQymKmQnP/Afi+xgwn5uthOC4vZrsAux7KOVGlrJ9nxoJn4ON9pZwgLgap1LCeJXWjyA/ZswgReCBRQbvZ2zKvEkp9BzL1uukFqkR2btnr7+d+MjY5gJOMrvAe8++p7hz8OUz50D6E5Ss3yYNo93Yn9C3Zf5v7kLvpAptl/e/mtJq/2d/xnVrd2l8iDa412KNt6sNsVGgelPqFV2km/+Nqm3Jwnya83KEfWdbiNb1qh3vw7HpqneL28zWZOng3IIOlTT5DP6g=
     on:
       tags: true
-      node: '4.0'
+      node: '9.0'
   - provider: releases
     api_key:
       secure: 2Qov064uOLZcZC3gDTFZIhMEZ3I0+v+JkIsKYqQoM7QFwErkmumi9GcYcrufGFIMJCF7AowA6nvQQkiekrLQNbe4bDR4U1EVH0yVv6PMhQL65fxdP2LXseST61lpFg6khvxsJGyBScx+XnQC3I36EkXpjaUZ/EVJEIX6Pr4hWVXZi1kRODGt1UzqLmqEWGLSIxc562wPYuO2SQhfJ2DTcsTK4Lhzu6AsOcQiRb/lSLng4CNEFE6AKhXr92OInzlFbl+j/hZdeDP4hJ55jHrys5KPvNNYgrOR638Jy4aeLuS98Md+poxfKFo1uf4GzG9gVU+RyR5KRXqG/crIpfV5ELAPG8st02sIS1DFh8o2AquGBQnSizqPvlqeme2hApFaDL5cv6pZay6CfSj3LZv/pKDaf0Kqnmye9HPSc9Mr0VEYYMlGTsKh+Vs+a3e5XILWHNH2avqHvgZH2s6taFoq3TYE0Sw9OiZqijkPNSkje10jyD5Yox8Q33Aju6XmGWUupNtH8cCL32VvbJ/7mbGh9AD5+g1MBl1XfTjfDNcARWfwwrtDNuc7HX1DvR1DROmgSBLQbbpLEqKmMeGAWVdS7K5wM7eG4j7+KWRyMjZq6ytrJmbipvU9v5ir6VzPINRc7j78Wg6LPNNdd6FzFyhDV4gnCq/LDSvREby4rUCLC+Q=
@@ -19,4 +19,4 @@ deploy:
       - "unist-util-size.min.js"
     on:
       tags: true
-      node: '7.0'
+      node: '9.0'
