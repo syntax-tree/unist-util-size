@@ -9,7 +9,7 @@
     "size",
     "count"
   ],
-  "repository": "https://github.com/syntax-tree/unist-util-size",
+  "repository": "syntax-tree/unist-util-size",
   "bugs": "https://github.com/syntax-tree/unist-util-size/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
