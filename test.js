@@ -2,7 +2,7 @@
 
 var test = require('tape');
 var h = require('hastscript');
-var size = require('./');
+var size = require('.');
 
 test('unist-util-size', function (t) {
   var tree = h('div', [
