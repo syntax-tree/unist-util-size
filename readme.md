@@ -13,17 +13,23 @@ npm install unist-util-size
 ## Usage
 
 ```js
-var h = require('hastscript');
-var size = require('unist-util-size');
+var h = require('hastscript')
+var size = require('unist-util-size')
 
 var tree = h('div', [
-  h('p', ['Some ', h('strong', 'importance'), ' and ', h('em', 'emphasis'), '.']),
+  h('p', [
+    'Some ',
+    h('strong', 'importance'),
+    ' and ',
+    h('em', 'emphasis'),
+    '.'
+  ]),
   h('pre', h('code', 'bar()'))
-]);
+])
 
-console.log(size(tree)); // 11
-console.log(size(tree.children[0])); // 7
-console.log(size(tree.children[0].children[0])); // 0
+console.log(size(tree)) // => 11
+console.log(size(tree.children[0])) // => 7
+console.log(size(tree.children[0].children[0])) // => 0
 ```
 
 ## API
