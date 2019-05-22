@@ -36,16 +36,25 @@ var tree = h('div', [
 ])
 
 console.log(size(tree)) // => 11
-console.log(size(tree.children[0])) // => 7
-console.log(size(tree.children[0].children[0])) // => 0
+console.log(size(tree, 'element')) // => 5
 ```
 
 ## API
 
-### `size(tree)`
+### `size(tree[, test])`
 
-Calculate the number of nodes in [`node`][node].
-The result is the number of [exclusive descendants][descendant].
+Calculate the number of nodes in [`tree`][node].
+
+###### Parameters
+
+*   `tree` ([`Node`][node]) — [Tree][] to traverse
+*   `test` ([`Test`][is], optional) — [`is`][is]-compatible test (such as a
+    node type)
+
+##### Returns
+
+`number` — Number of [exclusive descendants][descendant] passing `test` in
+`tree`.
 
 ## Contribute
 
@@ -103,6 +112,10 @@ abide by its terms.
 
 [unist]: https://github.com/syntax-tree/unist
 
+[is]: https://github.com/syntax-tree/unist-util-is
+
 [node]: https://github.com/syntax-tree/unist#node
+
+[tree]: https://github.com/syntax-tree/unist#tree
 
 [descendant]: https://github.com/syntax-tree/unist#descendant
