@@ -8,9 +8,9 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-Calculate the number of nodes in a [**Unist**][unist] tree.
+[**unist**][unist] utility to calculate the number of nodes in a tree.
 
-## Installation
+## Install
 
 [npm][]:
 
@@ -45,15 +45,17 @@ console.log(size(tree.children[0].children[0])) // => 0
 ### `size(tree)`
 
 Calculate the number of nodes in [`node`][node].
-The result is excluding the given node itself.
+The result is the number of [exclusive descendants][descendant].
 
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/unist`][contributing] for ways to get
+See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
 started.
+See [`support.md`][support] for ways to get help.
 
-This organisation has a [Code of Conduct][coc].  By interacting with this
-repository, organisation, or community you agree to abide by its terms.
+This project has a [Code of Conduct][coc].
+By interacting with this repository, organisation, or community you agree to
+abide by its terms.
 
 ## License
 
@@ -93,10 +95,14 @@ repository, organisation, or community you agree to abide by its terms.
 
 [author]: https://wooorm.com
 
+[contributing]: https://github.com/syntax-tree/.github/blob/master/contributing.md
+
+[support]: https://github.com/syntax-tree/.github/blob/master/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/master/code-of-conduct.md
+
 [unist]: https://github.com/syntax-tree/unist
 
 [node]: https://github.com/syntax-tree/unist#node
 
-[contributing]: https://github.com/syntax-tree/unist/blob/master/contributing.md
-
-[coc]: https://github.com/syntax-tree/unist/blob/master/code-of-conduct.md
+[descendant]: https://github.com/syntax-tree/unist#descendant
