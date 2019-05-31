@@ -1,10 +1,11 @@
 'use strict'
 
-var is = require('unist-util-is')
+var convert = require('unist-util-is/convert')
 
 module.exports = size
 
 function size(node, test) {
+  var is = convert(test)
   var children = node && node.children
   var length = (children && children.length) || 0
   var count = 0
@@ -14,7 +15,7 @@ function size(node, test) {
   while (++index < length) {
     child = children[index]
 
-    if (is(test, child, index, node)) {
+    if (is(child, index, node)) {
       count++
     }
 
