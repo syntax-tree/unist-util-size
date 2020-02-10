@@ -1,10 +1,13 @@
 {
   "name": "unist-util-size",
   "version": "1.1.1",
-  "description": "Calculate the number of nodes in a unist tree",
+  "description": "unist utility to calculate the number of nodes in a tree",
   "license": "MIT",
   "keywords": [
     "unist",
+    "unist-util",
+    "util",
+    "utility",
     "node",
     "size",
     "count"

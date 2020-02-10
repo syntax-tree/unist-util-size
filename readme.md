@@ -14,11 +14,11 @@
 
 [npm][]:
 
-```bash
+```sh
 npm install unist-util-size
 ```
 
-## Usage
+## Use
 
 ```js
 var h = require('hastscript')
@@ -55,6 +55,11 @@ Calculate the number of nodes in [`tree`][node].
 
 `number` — Number of [exclusive descendants][descendant] passing `test` in
 `tree`.
+
+## Related
+
+*   [`unist-util-source`](https://github.com/syntax-tree/unist-util-source)
+    — Get the source of a node or position
 
 ## Contribute
 
@@ -94,7 +99,7 @@ abide by its terms.
 
 [collective]: https://opencollective.com/unified
 
-[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+[chat-badge]: https://img.shields.io/badge/chat-spectrum-7b16ff.svg
 
 [chat]: https://spectrum.chat/unified/syntax-tree
 
