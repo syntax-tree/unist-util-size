@@ -67,7 +67,10 @@
     "esnext": false,
     "ignores": [
       "unist-util-size.js"
-    ]
+    ],
+    "rules": {
+      "unicorn/explicit-length-check": "off"
+    }
   },
   "remarkConfig": {
     "plugins": [

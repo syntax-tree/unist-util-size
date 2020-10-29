@@ -6,21 +6,20 @@ module.exports = size
 
 function size(node, test) {
   var is = convert(test)
-  var children = node && node.children
-  var length = (children && children.length) || 0
-  var count = 0
-  var index = -1
-  var child
+  return fastSize(node)
 
-  while (++index < length) {
-    child = children[index]
+  function fastSize(node) {
+    var children = node && node.children
+    var count = 0
+    var index = -1
 
-    if (is(child, index, node)) {
-      count++
+    if (children && children.length) {
+      while (++index < children.length) {
+        if (is(children[index], index, node)) count++
+        count += fastSize(children[index])
+      }
     }
 
-    count += size(child, test)
+    return count
   }
-
-  return count
 }
