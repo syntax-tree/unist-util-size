@@ -67,7 +67,7 @@ See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
 started.
 See [`support.md`][support] for ways to get help.
 
-This project has a [Code of Conduct][coc].
+This project has a [code of conduct][coc].
 By interacting with this repository, organisation, or community you agree to
 abide by its terms.
 
@@ -77,9 +77,9 @@ abide by its terms.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/syntax-tree/unist-util-size.svg
+[build-badge]: https://github.com/syntax-tree/unist-util-size/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/syntax-tree/unist-util-size
+[build]: https://github.com/syntax-tree/unist-util-size/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/unist-util-size.svg
 
