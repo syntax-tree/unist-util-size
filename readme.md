@@ -12,6 +12,9 @@
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -21,8 +24,8 @@ npm install unist-util-size
 ## Use
 
 ```js
-var h = require('hastscript')
-var size = require('unist-util-size')
+import {h} from 'hastscript'
+import {size} from 'unist-util-size'
 
 var tree = h('div', [
   h('p', [
@@ -40,6 +43,9 @@ console.log(size(tree, 'element')) // => 5
 ```
 
 ## API
+
+This package exports the following identifiers: `size`.
+There is no default export.
 
 ### `size(tree[, test])`
 

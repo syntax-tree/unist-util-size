@@ -1,10 +1,6 @@
-'use strict'
+import {convert} from 'unist-util-is'
 
-var convert = require('unist-util-is/convert')
-
-module.exports = size
-
-function size(node, test) {
+export function size(node, test) {
   var is = convert(test)
   return fastSize(node)
 
@@ -13,7 +9,7 @@ function size(node, test) {
     var count = 0
     var index = -1
 
-    if (children && children.length) {
+    if (children && children.length > 0) {
       while (++index < children.length) {
         if (is(children[index], index, node)) count++
         count += fastSize(children[index])

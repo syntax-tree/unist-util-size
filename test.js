@@ -1,8 +1,6 @@
-'use strict'
-
-var test = require('tape')
-var h = require('hastscript')
-var size = require('.')
+import test from 'tape'
+import h from 'hastscript'
+import {size} from './index.js'
 
 test('unist-util-size', function (t) {
   var tree = h('div', [
