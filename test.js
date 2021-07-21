@@ -1,5 +1,5 @@
 import test from 'tape'
-import h from 'hastscript'
+import {h} from 'hastscript'
 import {size} from './index.js'
 
 test('unist-util-size', (t) => {
