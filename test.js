@@ -2,8 +2,8 @@ import test from 'tape'
 import h from 'hastscript'
 import {size} from './index.js'
 
-test('unist-util-size', function (t) {
-  var tree = h('div', [
+test('unist-util-size', (t) => {
+  const tree = h('div', [
     h('p', [
       'Some ',
       h('strong', 'importance'),

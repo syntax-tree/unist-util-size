@@ -27,7 +27,7 @@ npm install unist-util-size
 import {h} from 'hastscript'
 import {size} from 'unist-util-size'
 
-var tree = h('div', [
+const tree = h('div', [
   h('p', [
     'Some ',
     h('strong', 'importance'),

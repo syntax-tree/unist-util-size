@@ -10,7 +10,7 @@
 import {convert} from 'unist-util-is'
 
 /** @type {Array.<Node>} */
-var empty
+let empty
 
 /**
  * @param {Node} node
@@ -18,7 +18,7 @@ var empty
  * @returns {number}
  */
 export function size(node, test) {
-  var is = convert(test)
+  const is = convert(test)
 
   return fastSize(node)
 
@@ -28,9 +28,9 @@ export function size(node, test) {
   function fastSize(node) {
     /** @type {Array.<Node>} */
     // @ts-ignore Looks like a parent.
-    var children = (node && node.children) || empty
-    var count = 0
-    var index = -1
+    const children = (node && node.children) || empty
+    let count = 0
+    let index = -1
 
     if (children && children.length > 0) {
       while (++index < children.length) {
