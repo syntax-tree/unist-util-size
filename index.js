@@ -27,14 +27,14 @@ export function size(node, test) {
    */
   function fastSize(node) {
     /** @type {Array.<Node>} */
-    // @ts-ignore Looks like a parent.
+    // @ts-expect-error Looks like a parent.
     const children = (node && node.children) || empty
     let count = 0
     let index = -1
 
     if (children && children.length > 0) {
       while (++index < children.length) {
-        // @ts-ignore Looks like a parent.
+        // @ts-expect-error Looks like a parent.
         if (is(children[index], index, node)) count++
         count += fastSize(children[index])
       }
