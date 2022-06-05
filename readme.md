@@ -8,17 +8,53 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-[**unist**][unist] utility to calculate the number of nodes in a tree.
+[unist][] utility to calculate the number of nodes in a tree.
+
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`size(node[, test])`](#sizenode-test)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Related](#related)
+*   [Contribute](#contribute)
+*   [License](#license)
+
+## What is this?
+
+This is a tiny utility that you can use to count nodes (that pass a test) in a
+tree.
+
+## When should I use this?
+
+This is super tiny but a sometimes common problem.
+You can use [`unist-util-visit`][unist-util-visit] yourself as well.
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, 16.0+, 18.0+), install with [npm][]:
 
 ```sh
 npm install unist-util-size
+```
+
+In Deno with [`esm.sh`][esmsh]:
+
+```js
+import {size} from "https://esm.sh/unist-util-size@3"
+```
+
+In browsers with [`esm.sh`][esmsh]:
+
+```html
+<script type="module">
+  import {size} from "https://esm.sh/unist-util-size@3?bundle"
+</script>
 ```
 
 ## Use
@@ -44,33 +80,39 @@ console.log(size(tree, 'element')) // => 5
 
 ## API
 
-This package exports the following identifiers: `size`.
+This package exports the identifier `size`.
 There is no default export.
 
-### `size(tree[, test])`
+### `size(node[, test])`
 
-Calculate the number of nodes in [`tree`][node].
-
-###### Parameters
-
-*   `tree` ([`Node`][node]) — [Tree][] to traverse
-*   `test` ([`Test`][is], optional) — [`is`][is]-compatible test (such as a
-    node type)
+Calculate the number of nodes in `node` ([`Node`][node]) that pass the optional
+`unist-util-is`-compatible [`Test`][test].
 
 ##### Returns
 
-`number` — Number of [exclusive descendants][descendant] passing `test` in
-`tree`.
+[Exclusive descendants][descendant] of `node` that pass `test` (`number`).
+
+## Types
+
+This package is fully typed with [TypeScript][].
+It exports no additional types.
+
+## Compatibility
+
+Projects maintained by the unified collective are compatible with all maintained
+versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Related
 
 *   [`unist-util-source`](https://github.com/syntax-tree/unist-util-source)
-    — Get the source of a node or position
+    — get the source of a node or position
 
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
-started.
+See [`contributing.md`][contributing] in [`syntax-tree/.github`][health] for
+ways to get started.
 See [`support.md`][support] for ways to get help.
 
 This project has a [code of conduct][coc].
@@ -111,22 +153,30 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[esmsh]: https://esm.sh
+
+[typescript]: https://www.typescriptlang.org
+
 [license]: license
 
 [author]: https://wooorm.com
 
-[contributing]: https://github.com/syntax-tree/.github/blob/HEAD/contributing.md
+[health]: https://github.com/syntax-tree/.github
 
-[support]: https://github.com/syntax-tree/.github/blob/HEAD/support.md
+[contributing]: https://github.com/syntax-tree/.github/blob/main/contributing.md
 
-[coc]: https://github.com/syntax-tree/.github/blob/HEAD/code-of-conduct.md
+[support]: https://github.com/syntax-tree/.github/blob/main/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/main/code-of-conduct.md
 
 [unist]: https://github.com/syntax-tree/unist
 
-[is]: https://github.com/syntax-tree/unist-util-is
-
 [node]: https://github.com/syntax-tree/unist#node
 
-[tree]: https://github.com/syntax-tree/unist#tree
-
 [descendant]: https://github.com/syntax-tree/unist#descendant
+
+[unist-util-visit]: https://github.com/syntax-tree/unist-util-visit
+
+[test]: https://github.com/syntax-tree/unist-util-is#test

@@ -20,7 +20,7 @@ let empty
  * @param {null|undefined|Type|Props|TestFunctionAnything|Array<Type|Props|TestFunctionAnything>} [test]
  *   `unist-util-is`-compatible test (such as a node type).
  * @returns {number}
- *   Number of exclusive descendants that pass `test` in `tree`.
+ *   Exclusive descendants of `node` that pass `test`.
  */
 export function size(node, test) {
   const is = convert(test)
