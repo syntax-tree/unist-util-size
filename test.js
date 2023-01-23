@@ -2,8 +2,15 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import {h} from 'hastscript'
 import {size} from './index.js'
+import * as mod from './index.js'
 
 test('size', () => {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['size'],
+    'should expose the public api'
+  )
+
   const tree = h('div', [
     h('p', [
       'Some ',
