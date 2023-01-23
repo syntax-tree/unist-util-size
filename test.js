@@ -1,8 +1,9 @@
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {h} from 'hastscript'
 import {size} from './index.js'
 
-test('unist-util-size', (t) => {
+test('size', () => {
   const tree = h('div', [
     h('p', [
       'Some ',
@@ -14,14 +15,13 @@ test('unist-util-size', (t) => {
     h('pre', h('code', 'bar()'))
   ])
 
-  t.equal(size(tree), 11, 'complete tree')
-  t.equal(size(tree.children[0]), 7, 'parent node with mixed children')
-  // @ts-expect-error: fine.
-  t.equal(size(tree.children[0].children[1]), 1, 'parent of text')
-  // @ts-expect-error: fine.
-  t.equal(size(tree.children[0].children[0]), 0, 'text node')
+  assert.equal(size(tree), 11, 'complete tree')
+  const p = tree.children[0]
+  assert(p)
+  assert(p.type === 'element')
+  assert.equal(size(p), 7, 'parent node with mixed children')
+  assert.equal(size(p.children[1]), 1, 'parent of text')
+  assert.equal(size(p.children[0]), 0, 'text node')
 
-  t.equal(size(tree, 'element'), 5, 'test')
-
-  t.end()
+  assert.equal(size(tree, 'element'), 5, 'test')
 })
