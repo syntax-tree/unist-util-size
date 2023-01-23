@@ -17,7 +17,7 @@
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
-    *   [`size(node[, test])`](#sizenode-test)
+    *   [`size(tree[, test])`](#sizetree-test)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Related](#related)
@@ -37,7 +37,7 @@ You can use [`unist-util-visit`][unist-util-visit] yourself as well.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, 16.0+, 18.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install unist-util-size
@@ -46,14 +46,14 @@ npm install unist-util-size
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {size} from "https://esm.sh/unist-util-size@3"
+import {size} from 'https://esm.sh/unist-util-size@3'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {size} from "https://esm.sh/unist-util-size@3?bundle"
+  import {size} from 'https://esm.sh/unist-util-size@3?bundle'
 </script>
 ```
 
@@ -80,17 +80,23 @@ console.log(size(tree, 'element')) // => 5
 
 ## API
 
-This package exports the identifier `size`.
+This package exports the identifier [`size`][api-size].
 There is no default export.
 
-### `size(node[, test])`
+### `size(tree[, test])`
 
-Calculate the number of nodes in `node` ([`Node`][node]) that pass the optional
-`unist-util-is`-compatible [`Test`][test].
+Calculate the number of nodes in `tree`.
 
-##### Returns
+###### Parameters
 
-[Exclusive descendants][descendant] of `node` that pass `test` (`number`).
+*   `tree`  ([`Node`][node])
+    — tree to traverse
+*   `test`  ([`Test`][test])
+    — `unist-util-is` compatible test (such as a node type)
+
+###### Returns
+
+Number of exclusive descendants of `tree` that pass `test` (`number`).
 
 ## Types
 
@@ -101,7 +107,7 @@ It exports no additional types.
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Related
@@ -175,8 +181,8 @@ abide by its terms.
 
 [node]: https://github.com/syntax-tree/unist#node
 
-[descendant]: https://github.com/syntax-tree/unist#descendant
-
 [unist-util-visit]: https://github.com/syntax-tree/unist-util-visit
 
 [test]: https://github.com/syntax-tree/unist-util-is#test
+
+[api-size]: #sizetree-test
