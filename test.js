@@ -1,11 +1,13 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {h} from 'hastscript'
-import {size} from './index.js'
+import {size} from 'unist-util-size'
 
 test('size', async function (t) {
   await t.test('should expose the public api', async function () {
-    assert.deepEqual(Object.keys(await import('./index.js')).sort(), ['size'])
+    assert.deepEqual(Object.keys(await import('unist-util-size')).sort(), [
+      'size'
+    ])
   })
 
   const tree = h('div', [
