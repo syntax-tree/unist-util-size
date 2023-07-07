@@ -46,14 +46,14 @@ npm install unist-util-size
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {size} from 'https://esm.sh/unist-util-size@3'
+import {size} from 'https://esm.sh/unist-util-size@4'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {size} from 'https://esm.sh/unist-util-size@3?bundle'
+  import {size} from 'https://esm.sh/unist-util-size@4?bundle'
 </script>
 ```
 
